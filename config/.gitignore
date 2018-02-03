@@ -1,0 +1,4 @@
+# Ignore all custom config files
+*
+!default.json
+!.gitignore
