@@ -3,7 +3,8 @@
 var _ = require('underscore'),
     Q = require('q'),
     Class = require('class.extend'),
-    nodemailer = require('nodemailer');
+    nodemailer = require('nodemailer'),
+    os = require('os');
 
 module.exports = Class.extend({
 
@@ -24,8 +25,16 @@ module.exports = Class.extend({
       });
 
       this._baseMessageOptions = {
-         from: options.email.account.from || options.email.account.user,
+         from: this._formatFromField(options.email.account.from) || options.email.account.user,
       };
+   },
+
+   _formatFromField: function(from) {
+      if (!from) {
+         return undefined;
+      }
+
+      return from.replace('STATUSFLAREHOST', os.hostname());
    },
 
    sendMessage: function(to, subject, body) {

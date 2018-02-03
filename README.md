@@ -23,6 +23,12 @@
    }
    ```
 
+3. (Optional) Add a `from` field under `email.account`
+
+   ```
+   "from": "\"Status Flare @ STATUSFLAREHOST\" <statusflare@example.com>",
+   ```
+
 ### Testing
 
 ```
