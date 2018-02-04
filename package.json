@@ -1,6 +1,6 @@
 {
   "name": "status-flare",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple email status sender for systems with Node.js",
   "main": "src/cli.js",
   "bin": {
