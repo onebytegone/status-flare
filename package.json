@@ -2,7 +2,10 @@
   "name": "status-flare",
   "version": "0.0.1",
   "description": "A simple email status sender for systems with Node.js",
-  "main": "src/index.js",
+  "main": "src/cli.js",
+  "bin": {
+    "status-flare": "src/cli.js"
+  },
   "scripts": {
     "test": "grunt standards && ./node_modules/.bin/istanbul cover --include-all-sources -x '**/Gruntfile.js' ./node_modules/.bin/_mocha -- -R spec 'tests/**/*.test.js'"
   },
