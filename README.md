@@ -7,6 +7,18 @@
 
 ## Setup
 
+This utility can be installed via `npm`:
+
+```
+npm install -g status-flare
+```
+
+The `config` directory is located within the package. The path to the package can be found using:
+
+```
+npm list -g status-flare
+```
+
 ### If using Gmail as transport:
 
 1. Setup [app password](https://security.google.com/settings/security/apppasswords) if needed ([Help doc](https://support.google.com/accounts/answer/185833?hl=en))
@@ -29,11 +41,22 @@
    "from": "\"Status Flare @ STATUSFLAREHOST\" <statusflare@example.com>",
    ```
 
-### Testing
+
+## Examples
+
+### Basic CLI usage
 
 ```
-NODE_ENV=custom-user ./src/cli.js --to 'youremail@example.com' --subject 'Hello World' --body 'Status Flare is working'
+NODE_ENV=custom-user status-flare --to 'youremail@example.com' --subject 'Hello World' --body 'Status Flare is working'
 ```
+
+### Using `stdin`
+
+```
+echo "From stdin" | NODE_ENV=custom-user status-flare --to 'youremail@example.com' --subject 'Hello World' --body
+'No data from stdin'
+```
+
 
 ## License
 
